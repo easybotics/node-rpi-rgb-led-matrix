@@ -55,7 +55,7 @@ LedMatrix::LedMatrix (int rows, int cols, int parallel_displays, int chained_dis
 	defaults.hardware_mapping = mapping;
 	defaults.led_rgb_sequence = rgbseq;
 
-	std::cout << rgb_matrix::ParseOptionsFromFlags(&num, &d, &defaults, &runtime, true) << std::endl;
+	//std::cout << rgb_matrix::ParseOptionsFromFlags(&num, &d, &defaults, &runtime, true) << std::endl;
 	//temp debug output
 	//parse extra settings flags for POWER_USERS (TM)
 
