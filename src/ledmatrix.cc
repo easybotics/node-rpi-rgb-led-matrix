@@ -60,8 +60,8 @@ LedMatrix::LedMatrix (int rows, int cols, int parallel_displays, int chained_dis
 	//parse extra settings flags for POWER_USERS (TM)
 
 	assert(io.Init());
-	//matrix = CreateMatrixFromOptions(defaults, runtime);
-	matrix = new RGBMatrix(&io, defaults);	
+	matrix = CreateMatrixFromFlags(&num, &d, &defaults, &runtime, true);
+	//matrix = new RGBMatrix(&io, defaults);	
 	matrix->set_luminance_correct(true);
 
 	canvas = matrix->CreateFrameCanvas();
