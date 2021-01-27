@@ -52,12 +52,12 @@ class LedMatrix : public node::ObjectWrap
 	void DrawText	(int, int, std::tuple<int, int, int>, const char* text, const char* fontFile); 
 	void DrawCircle	(int, int, int, std::tuple<int, int, int>);
 	void DrawLine	(int, int, int, int, std::tuple<int, int, int>); 
-	void Brightness (int); 
+	void SetBrightness (int); 
 
 	void Update		(void);
 
 	protected:
-	LedMatrix (int rows , int cols , int chained_displays , int parallel_displays, int brightness, const char* mapping, const char* rgbSeq, std::vector<std::string> flags);
+	LedMatrix (int rows, int cols, int chained_displays , int parallel_displays, int brightness, const char* mapping, const char* rgbSeq, std::vector<std::string> flags);
 
 	virtual ~LedMatrix (void);
 
@@ -74,7 +74,7 @@ class LedMatrix : public node::ObjectWrap
 	static void DrawText		(const Nan::FunctionCallbackInfo<v8::Value>& args);
 	static void DrawCircle		(const Nan::FunctionCallbackInfo<v8::Value>& args);
 	static void DrawLine		(const Nan::FunctionCallbackInfo<v8::Value>& args);
-	static void Brightness		(const Nan::FunctionCallbackInfo<v8::Value>& args);
+	static void SetBrightness	(const Nan::FunctionCallbackInfo<v8::Value>& args);
 
 	static void Scroll			(const Nan::FunctionCallbackInfo<v8::Value>& args);
 	static void UV_Scroll		(uv_work_t* work);
